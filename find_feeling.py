@@ -22,7 +22,15 @@ def classify_text(text, column_text, column_classification):
 
     return accuracy
 
-review = pd.read_csv('imdb-reviews-pt-br.csv')
-review['classification'] = review['sentiment'].replace(['neg', 'pos'], [0, 1])
+def main() -> int:
 
-print(classify_text(review, 'text_pt', 'classification'))
+    review = pd.read_csv('imdb-reviews-pt-br.csv')
+    review['classification'] = review['sentiment'].replace(['neg', 'pos'], [0, 1])
+
+    print(classify_text(review, 'text_pt', 'classification'))
+
+    return 0
+
+if __name__ == '__main__':
+    exit(main())
+
